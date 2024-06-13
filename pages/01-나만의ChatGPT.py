@@ -1,5 +1,3 @@
-pip install langchain_community
-
 import streamlit as st
 from langchain_community.chat_models import ChatOpenAI
 from langchain.prompts import PromptTemplate
