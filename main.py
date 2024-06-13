@@ -1,3 +1,5 @@
+pip install langchain_community
+
 import streamlit as st
 import settings
 
