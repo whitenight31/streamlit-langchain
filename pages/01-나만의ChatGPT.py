@@ -3,9 +3,7 @@ from langchain_community.chat_models import ChatOpenAI
 from langchain.prompts import PromptTemplate
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationChain
-from langchain_openai import ChatOpenAI
 from langchain.callbacks.base import BaseCallbackHandler
-from langchain_openai import ChatOpenAI
 import os
 import pickle
 import datetime
