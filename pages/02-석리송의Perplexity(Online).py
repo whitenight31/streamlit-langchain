@@ -56,8 +56,8 @@ conversation = ConversationChain(
     llm=llm, verbose=False, memory=ConversationBufferMemory()
 )
 
-prompt_preset = "질문에 친절하게 답해주세요."
-prompt_input = tab2.text_area("Prompt", value=prompt_preset)
+#prompt_preset = "질문에 친절하게 답해주세요."
+prompt_input = tab2.text_area("Prompt")
 
 
 def create_prompt_template(prompt_input):
