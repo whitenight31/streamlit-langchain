@@ -46,7 +46,7 @@ if "ai" not in st.session_state:
     st.session_state.ai = []
 
 if "model" not in st.session_state:
-    st.session_state.model = "gpt-4-turbo-preview"
+    st.session_state.model = "gpt-4o"
 
 
 def add_history(role, content):
@@ -99,7 +99,7 @@ def format_docs(docs):
     return "\n\n".join(doc.page_content for doc in docs)
 
 
-model_input = tab2.selectbox("model", ["gpt-3.5-turbo", "gpt-4-turbo-preview"], index=1)
+model_input = tab2.selectbox("model", ["gpt-3.5-turbo", "gpt-4o"], index=1)
 
 if model_input:
     st.session_state.model = model_input
