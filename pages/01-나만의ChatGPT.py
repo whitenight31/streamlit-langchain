@@ -59,7 +59,7 @@ class StreamCallback(BaseCallbackHandler):
 
 # ChatOpenAI 객체를 생성합니다.
 llm = ChatOpenAI(
-    model="gpt-4-turbo-preview",
+    model="gpt-4o",
     streaming=True,
     callbacks=[StreamCallback(st.empty())],
     api_key=st.session_state.api_key,
@@ -97,7 +97,7 @@ if prompt_input:
     prompt_template = create_prompt_template(prompt_input)
     conversation.prompt = prompt_template
 
-model_input = tab2.selectbox("Model", ["gpt-3.5-turbo", "gpt-4-turbo-preview"], index=1)
+model_input = tab2.selectbox("Model", ["gpt-3.5-turbo", "gpt-4o"], index=1)
 
 if model_input:
     settings.save_config({"model": model_input})
