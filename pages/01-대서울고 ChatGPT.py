@@ -19,6 +19,11 @@ if "api_key" not in st.session_state:
         st.session_state.api_key = ""
 
 st.title("대서울고 전용 ChatGPT")
+from PIL import Image
+# main()
+img = Image.open('https://i.namu.wiki/i/BAc2kEYAp8LuGX7k07D2detdeksdP7YZwQRu1MlrAGzYaKpxxmYQB1ZOhJaOsoMZms1KWym2FEvHaAQLAJYI9YZp42r1hfFR6Q-bQgTTE_FgWFNNuZnRkbCgIa_JSOSijF-oZie79AgOVALpxVINAw.webp')
+	# 경로에 있는 이미지 파일을 통해 변수 저장
+st.image(img)
 st.markdown(
     f"""API KEY
     `{st.session_state.api_key[:-15] + '***************'}`
