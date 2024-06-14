@@ -1,6 +1,6 @@
 import streamlit as st
-#from langchain_community.document_loaders import UnstructuredFileLoader
-from langchain.document_loaders import UnstructuredFileLoader
+from langchain_community.document_loaders import UnstructuredFileLoader
+#from langchain.document_loaders import UnstructuredFileLoader
 from langchain.prompts import ChatPromptTemplate
 from langchain.embeddings import CacheBackedEmbeddings, OpenAIEmbeddings
 from langchain.schema.runnable import RunnableLambda, RunnablePassthrough
@@ -130,7 +130,8 @@ def embed_file(file):
         length_function=len,
     )
     loader = UnstructuredFileLoader(file_path)
-    docs = loader.load_and_split(text_splitter=text_splitter)
+    docs = loader.load()
+    #docs = loader.load_and_split(text_splitter=text_splitter)
     embeddings = OpenAIEmbeddings()
     cached_embeddings = CacheBackedEmbeddings.from_bytes_store(embeddings, cache_dir)
     vectorstore = FAISS.from_documents(docs, cached_embeddings)
