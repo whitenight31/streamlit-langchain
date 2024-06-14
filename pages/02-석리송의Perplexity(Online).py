@@ -84,7 +84,7 @@ if prompt_input:
     prompt_template = create_prompt_template(prompt_input)
     conversation.prompt = prompt_template
 
-model_input = tab2.selectbox("Model", ["pplx-70b-online", "llama-3-sonar-large-32k-online"], index=1)
+model_input = tab2.selectbox("Model", ["llama-3-70b-instruct", "llama-3-sonar-large-32k-online"], index=1)
 
 if model_input:
     settings.save_config({"model": model_input})
