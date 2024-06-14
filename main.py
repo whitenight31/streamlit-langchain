@@ -9,21 +9,6 @@ if "api_key" in config:
 
 main_text = st.empty()
 
-if "api_key" in st.session_state:
-    main_text.markdown(
-        f"""저장된 OPENAI API KEY
-                
-                {st.session_state.api_key}
-                
-    """
-    )
-else:
-    main_text.markdown(
-        f"""저장된 `OPENAI API KEY` 가 없습니다.
-
-🔗 [OPENAI API Key](https://platform.openai.com/account/api-keys)에서 API Key를 발급받을 수 있습니다."""
-    )
-
 
 api_key = st.text_input("🔑 새로운 OPENAI API Key", type="password")
 
