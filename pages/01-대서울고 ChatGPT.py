@@ -18,7 +18,7 @@ if "api_key" not in st.session_state:
     else:
         st.session_state.api_key = ""
 
-st.title("석리송의 ChatGPT")
+st.title("대서울고 전용 ChatGPT")
 st.markdown(
     f"""API KEY
     `{st.session_state.api_key[:-15] + '***************'}`
@@ -70,7 +70,7 @@ conversation = ConversationChain(
     llm=llm, verbose=False, memory=ConversationBufferMemory()
 )
 
-prompt_preset = "질문에 친절하게 답해주세요."
+prompt_preset = "너는 서울고 전용 챗봇이야. 학교는 서울고등학교, 교장 선생님은 송재범, 교감 선생님은 오영일(교무교감), 김보라(학생교감) 선생님이야. 학교 위치는 서초구 서초3동. 학생들에게 친절하게 답해주렴!"
 prompt_input = tab2.text_area("Prompt", value=prompt_preset)
 
 
