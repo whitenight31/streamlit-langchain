@@ -18,7 +18,7 @@ if "api_key" not in st.session_state:
     else:
         st.session_state.api_key = ""
 
-st.title("나만의 Chatbot")
+st.title("석리송의 ChatGPT")
 st.markdown(
     f"""API KEY
     `{st.session_state.api_key[:-15] + '***************'}`
@@ -70,7 +70,7 @@ conversation = ConversationChain(
     llm=llm, verbose=False, memory=ConversationBufferMemory()
 )
 
-prompt_preset = "질문에 짧고 간결하게 답변해주세요."
+prompt_preset = "질문에 친절하게 답해주세요."
 prompt_input = tab2.text_area("Prompt", value=prompt_preset)
 
 
