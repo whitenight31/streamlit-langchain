@@ -44,8 +44,8 @@ class StreamCallback(BaseCallbackHandler):
 
 # ChatOpenAI 객체를 생성합니다.
 llm = ChatOpenAI(
-    #model="llama-3-sonar-large-32k-online",
-    model = "pplx-70b-online",
+    model="llama-3-sonar-large-32k-online",
+    #model = "pplx-70b-online",
     base_url="https://api.perplexity.ai",
     streaming=True,
     callbacks=[StreamCallback(st.empty())],
