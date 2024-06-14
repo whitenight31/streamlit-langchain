@@ -1,6 +1,7 @@
 import streamlit as st
+from langchain_community.document_loaders import UnstructuredFileLoader
+#from langchain.document_loaders import UnstructuredFileLoader
 from langchain.prompts import ChatPromptTemplate
-from langchain.document_loaders import UnstructuredFileLoader
 from langchain.embeddings import CacheBackedEmbeddings, OpenAIEmbeddings
 from langchain.schema.runnable import RunnableLambda, RunnablePassthrough
 from langchain.storage import LocalFileStore
