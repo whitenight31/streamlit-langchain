@@ -11,6 +11,20 @@ import settings
 
 st.title("석리송의 Perplexity(Online)")
 
+# API KEY 를 설정합니다.
+if "api_key2" not in st.session_state:
+    config = settings.load_config()
+    if "api_key2" in config:
+        st.session_state.api_key2 = settings.load_config()["api_key2"]
+    else:
+        st.session_state.api_key2 = ""
+
+st.markdown(
+    f"""API KEY
+    `{st.session_state.api_key2[:-20] + '***************'}`
+    """
+)
+
 if "history" not in st.session_state:
     st.session_state.history = []
 
@@ -48,7 +62,7 @@ llm = ChatOpenAI(
     base_url="https://api.perplexity.ai",
     streaming=True,
     callbacks=[StreamCallback(st.empty())],
-    api_key="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",
+    api_key=st.session_state.api_key2,
 )
 
 # ConversationChain 객체를 생성합니다.
