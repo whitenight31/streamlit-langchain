@@ -9,7 +9,7 @@ import pickle
 import datetime
 import settings
 
-st.title("석리송의 Perplexity(Online)")
+st.title("신천중놀러가기의 Perplexity(Online)")
 
 # API KEY 를 설정합니다.
 if "api_key2" not in st.session_state:
